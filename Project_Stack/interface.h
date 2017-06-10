@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef MY_INTERFACE___H
+#define MY_INTERFACE___H
 
 
 enum MY_INTERF_EN
@@ -25,18 +26,21 @@ static char *strtab[] =
 	"5 - open",          //INTER_OPEN
 	"6 - clear",		//INTERF_CLEAR
 	"7 - finish" ,      //INTERF_STOP
+	
 };
 
 
 
-
 void MyMenu();
-void push();
-void pop();
-void top();
-void search();
-void print_all();
-void save();
-void open();
-void clear();
-void auto_push();
+static void push();
+static void pop();
+static void top();
+static void search();
+static void print_all();
+static void save();
+static void open();
+static void clear();
+
+
+
+#endif

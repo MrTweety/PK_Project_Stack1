@@ -5,8 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "interface.h"
-//#include "Stack.h"
-//#include "student.h"
+
 #pragma warning (disable : 4996)
 
 

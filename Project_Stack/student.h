@@ -1,8 +1,9 @@
-#pragma once
+#ifndef STUDENT___H
+#define STUDENT___H
 
 
 
-#pragma once
+
 #include "faculty.h"
 
 #define MAX_NAME 50
@@ -17,7 +18,7 @@ struct MY_STUDENT
 };
 
 
-void *Student_Init(char *name, int year,enum FACULTY faculty);
+static void *Student_Init(char *name, int year,enum FACULTY faculty);
 void Student_Free(void *ptr);
 void * Student_Push(char *name, int year, FACULTY faculty);
 void Student_Print(void *ptr);
@@ -30,8 +31,10 @@ void Student_open_bin_1(char * file);
 
 
 
-void Student_search_name(void *ptr,char *sname);
-void Student_search_year(void *ptr, int *year);
-void Student_search_faculty(void *ptr, FACULTY faculty);
-void Student_search(void *ptr, char *sname, int year, FACULTY faculty);
+void Student_search_name(void *ptr, void * ptrm);
+void Student_search_year(void *ptr, void * ptrm);
+void Student_search_faculty(void *ptr, void * ptrm);
 
+
+
+#endif

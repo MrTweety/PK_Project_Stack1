@@ -14,14 +14,14 @@ static FILE *pf = NULL;
 
 FreeData ptr_free_dat;           //Deklaracja wskaznika do funkcji typu FreeData
 PrintObject ptr_fun_prnt;       //wskaznik do funkcji, ktora drukuje obiekt danych
-SearchObject ptr_search;
+SearchObject1 ptr_search1;
 SaveObject ptr_save;
 OpenObject ptr_open;
 
 
 
 //*********************************************************************************************************************************
-void Stack_Init(FreeData pFreeDat)
+ void Stack_Init(FreeData pFreeDat)
 {
 	top = NULL;
 	ptr_free_dat = pFreeDat;
@@ -32,7 +32,7 @@ MY_STACK * Stack_Push(void *pdat)
 {
 	
 	
-		//alokujemy pamiec dla nowego elementu kolejki
+		//alokujemy pamiec dla nowego elementu stosu
 		MY_STACK *current = (MY_STACK *)malloc(sizeof(MY_STACK));
 		if (!current)
 			return NULL;
@@ -80,15 +80,10 @@ MY_STACK Stack_Pop()
 
 		//Pobieramy dane dla elementu top.
 		rv.pData = top->pData;
-		
-
-		//Nie jest to obowjazkowe
 		rv.prev = NULL;
 		
-
 		//zwalniamy pamiec dla elementu top
 		free(top);
-
 
 		//przestawiamy top do poprzedniego elementu
 		top = prev;
@@ -176,62 +171,7 @@ void Stack_Print_All(PrintObject pDat)
 
 //**********************************************************
 
-/*
-void Stack_search(SearchObject pDat, SEARCH ssearch)
-{
-	search = top;
 
-	ptr_search = pDat;
-
-	char sname[512];
-	int syear = 0;
-	int sfa = -10;
-	printf("name, year, fa\n");
-	scanf("%s", sname);
-	//scanf_s("%d", &syear);
-	//scanf_s("%d", &sfa);
-//	printf("szukane: %s %d %d\n", sname, syear, sfa);
-
-	//pobieramy po kolejce obiekty
-
-		switch (ssearch)
-		{
-		case SEARCH_NAME:  while (search)
-		{
-			// Wypisanie danych dla biezacego elementu stosu, do ktorego wskazuje wskaznik p
-			//(*ptr_search)(search->pData, sname);
-
-			//przestawiamy wskaznik p do poprzedniego elementu kolejki
-			search = search->prev;
-
-		}
-			break;
-		case SEARCH_YEAR:  while (search)
-		{
-			// Wypisanie danych dla biezacego elementu stosu, do ktorego wskazuje wskaznik p
-			
-
-			//przestawiamy wskaznik p do poprzedniego elementu kolejki
-			search = search->prev;
-
-		}
-			break;
-		//case INTERF_CLEAR: Stack_search(Student_search_name, ssearch);
-			//break;
-		//case INTERF_STOP:
-
-		default:
-			printf("NO FACULTY\n");
-		};
-		
-	
-}
-*/
-//*******************************************************
-
-
-
-//void Stack_save(char *file)
 void Stack_save(SaveObject pDat, char *file)
 {
 
@@ -274,20 +214,32 @@ void Stack_save(SaveObject pDat, char *file)
 void Stack_open(OpenObject pDat, char * file)
 {
 	ptr_open = pDat;
-	MY_STACK *p = top;
-	if (top == NULL)
 
 	{
-		(*ptr_open)(NULL, file);
-
-	}
-	else
-	{
-		(*ptr_open)(p->pData, file);
+		(*ptr_open)( file);
 	}
 
 }
-	//*******************************************************
+//*******************************************************
 
 
 
+	
+void Stack_search_1(SearchObject1 pDat, void* ptrm)
+{
+	search = top;
+
+	ptr_search1 = pDat;
+
+	
+
+	while (search)
+	{
+		// Wypisanie danych dla biezacego elementu stosu, do ktorego wskazuje wskaznik p
+		(*ptr_search1)(search->pData, ptrm);
+
+		//przestawiamy wskaznik p do poprzedniego elementu stosu
+		search = search->prev;
+	}
+}
+//********************************************************************************************************

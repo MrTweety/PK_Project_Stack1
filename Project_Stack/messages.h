@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MESSAGES___H
+#define  MESSAGES___H
 
 enum MY_MESSAGES
 {
@@ -20,4 +21,8 @@ enum MY_DECISION
 };
 
 
-enum MY_DECISION my_mess_fun(enum MY_MESSAGES mess);
+ enum MY_DECISION my_mess_fun(enum MY_MESSAGES mess);
+
+
+
+#endif

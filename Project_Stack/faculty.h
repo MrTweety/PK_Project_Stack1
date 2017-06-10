@@ -1,3 +1,8 @@
+#ifndef FACULTY_ADFGRETW__H
+#define FACULTY_ADFGRETW__H
+
+
+
 #pragma once
 
 
@@ -22,6 +27,9 @@ static char *ffacultyy[] =
 {
 	"MATH",			//MATH
 	"COMPUTER",			//COMPUTER
-	"NO FACULTY",		//NO FACULTY
-	"3 - finish"        //INTERF_STOP
+	"NO FACULTY, uzyj funkcji POP",		//NO FACULTY
+
 };
+
+
+#endif
