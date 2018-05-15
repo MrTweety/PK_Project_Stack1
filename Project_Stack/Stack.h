@@ -1,6 +1,4 @@
 
-//Mateusz Gaczorek
-//Student I roku Informatyki gr : 11 WFMiI
 
 #ifndef STACK___H
 #define STACK___H

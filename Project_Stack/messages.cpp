@@ -1,6 +1,5 @@
 
-//Mateusz Gaczorek
-//Student I roku Informatyki gr : 11 WFMiI
+
 
 #include "stdafx.h"
 #include "messages.h"

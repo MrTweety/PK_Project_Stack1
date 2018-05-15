@@ -1,6 +1,5 @@
 
-//Mateusz Gaczorek
-//Student I roku Informatyki gr : 11 WFMiI
+
 
 #ifndef STUDENT___H
 #define STUDENT___H
