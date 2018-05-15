@@ -1,3 +1,7 @@
+
+//Mateusz Gaczorek
+//Student I roku Informatyki gr : 11 WFMiI
+
 #include "stdafx.h"
 #include "messages.h"
 #include <stdlib.h>
@@ -5,7 +9,7 @@
 
 static char *my_message_str_tab[] = {
 	"E memory allocation error",	//MY_MESS_MEM_ALOC_ERROR
-	"P No students,tmp=NULL",       //MY_DECISION_PRINT_BREAK
+	"P No students,top=NULL",       //MY_DECISION_PRINT_BREAK
 	"S POP:stack is empty",    //
 	"O Error opening file"      //MY_DECISION_PRINT_BREAK
 		        
@@ -34,19 +38,19 @@ MY_DECISION_CONTINUE - Kontynujemy wykonanie
 
 	if (my_message_str_tab[mess][0] == 'P')
 	{
-		//to jest b³¹d. Przerywamy wykonanie programu.
+		//to jest b³¹d. Przerywamy wykonanie funkcji
 		retval = MY_DECISION_PRINT_BREAK;
 	}
 
 	if (my_message_str_tab[mess][0] == 'O')
 	{
-		//to jest b³¹d. Przerywamy wykonanie programu.
+		//to jest b³¹d. Przerywamy wykonanie funkcji
 		retval = MY_DECISION_FILE_BREAK;
 	}
 
 	if (my_message_str_tab[mess][0] == 'S')
 	{
-		//to jest b³¹d. Przerywamy wykonanie programu.
+		//to jest b³¹d. Przerywamy wykonanie funkcji.
 		retval = MY_DECISION_POP_BREAK;
 	}
 
